@@ -24,15 +24,9 @@ def parse_args():
     parser.add_argument('--thumbnail_size', '-ts', 
         type=int, nargs=2, default=(64, 64), help='size of the thumbnail')
     parser.add_argument('--percentile', '-p', 
-        type=int, default=5, help='percentile to exclude')
+        type=int, default=0, help='percentile to exclude')
 
     return parser.parse_args()
-
-# resize to fit within a (width, height) tuple
-def resize_to_tuple(image, dimensions):
-    width = dimensions[0]
-    height = dimensions[1]
-    return image.thumbnail_image(width, height=height)
 
 parsed = parse_args()
 
